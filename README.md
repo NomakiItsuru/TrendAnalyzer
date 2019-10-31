@@ -1,0 +1,2 @@
+# TrendAnalyzer
+SS2年
