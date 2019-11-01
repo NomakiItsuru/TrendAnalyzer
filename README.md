@@ -18,7 +18,7 @@ OAuthAccessToken=[OAUTH_ACCESS_TOKEN]
 OAuthAccessSecret=[OAUTH_ACCESS_SECRET]
 ```  
 5. 論文注釈[[2]](http://www.lr.pi.titech.ac.jp/~takamura/pndic_ja.html)から単語感情極性対応表（日本語）をダウンロードし、jarと同じディレクトリに配置する。
-6. java -jar [jar名] -create-dictionary:[語感情極性対応表（日本語）のパス]を実行。
+6. java -jar [jar名] -create-dictionary:[単語感情極性対応表（日本語）のパス]を実行。
 
 # Program Arguments
 実行時に括弧（[]）は必要ありません。  
