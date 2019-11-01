@@ -3,6 +3,8 @@
 「Twitterを用いた感情分析　～『トレンド』に対する人々の感情を機械的に予想する ～」  
 プログラム群  
   
+<img src="https://raw.githubusercontent.com/NomakiItsuru/TrendAnalyzer/master/flow_chart.png" />
+  
 # Create Debug Environment
 1. 論文注釈[10]からMeCab（mecab-0.996.exe）をUTF-8でインストールする。  
 2. 論文注釈[5]で頒布されているNEologd辞書（2019/8/31版）をダウンロードし、MeCabに適用する。  
