@@ -2,7 +2,7 @@ package dev.itsu.trendanalyzer
 
 /**
  * 2019年度 栃木高校 SS課題研究
- * 「Twitterを用いた感情分析　～『トレンド』の単語から炎上中の単語を抽出する～」
+ * 「Twitterを用いた感情分析　～『トレンド』に対する人々の感情を機械的に予想する～」
  *
  * @author 野牧　樹　(2130)
  */
@@ -26,7 +26,7 @@ fun main(args: Array<String>) {
 
 private fun analyzeArgs(args: Array<String>) {
     args.forEach {
-        when  {
+        when {
             it.startsWith("-create-dictionary") -> {
                 Thread {
                     val path = it.split(":")
@@ -53,10 +53,18 @@ private fun analyzeArgs(args: Array<String>) {
                 if (text.size >= 2) MeCabManager.testMecab(text[1])
             }
 
+            it.startsWith("-test-analyze") -> {
+                val text = it.split(":")
+                var result = 0.0
+                if (text.size >= 2) result = MainLogic.test(text[1])
+                System.out.println("Evaluation=$result")
+            }
+
             it.startsWith("-output") -> {
                 val path = it.split(":")
                 if (path.size >= 2) Utils.setCSVFile(path[1])
             }
+
         }
     }
 }

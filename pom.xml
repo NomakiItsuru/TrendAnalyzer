@@ -7,10 +7,17 @@
     <groupId>dev.itsu.trendanalyzer</groupId>
     <artifactId>TrendAnalyzer</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>Tochigi High School SSH Researching project</description>
+    <url>https://github.com/NomakiItsuru/TrendAnalyzer</url>
+    <description>
+        2019年度 栃木高校 SS課題研究
+        「Twitterを用いた感情分析　～『トレンド』に対する人々の感情を機械的に予想する～」
+
+        @author 野牧　樹　(2130)
+    </description>
 
     <properties>
         <kotlin.version>1.2.41</kotlin.version>
+        <sqlite.version>3.19.3</sqlite.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,7 +43,7 @@
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.19.3</version>
+            <version>${sqlite.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -64,7 +71,36 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.xerial:sqlite-jdbc</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <transformers>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>dev.itsu.trendanalyzer.TrendAnalyzerKt</mainClass>
+                        </transformer>
+                    </transformers>
+                    <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml
+                    </dependencyReducedPomLocation>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>

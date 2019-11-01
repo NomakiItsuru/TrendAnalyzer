@@ -1,5 +1,12 @@
 package dev.itsu.trendanalyzer.core
 
+/**
+ * 2019年度 栃木高校 SS課題研究
+ * 「Twitterを用いた感情分析　～『トレンド』に対する人々の感情を機械的に予想する～」
+ *
+ * @author 野牧　樹　(2130)
+ */
+
 import dev.itsu.trendanalyzer.TwitterWrapper
 import dev.itsu.trendanalyzer.dictionary.Dictionary
 import dev.itsu.trendanalyzer.dictionary.Word
@@ -51,5 +58,25 @@ object MainLogic {
         }
 
         Utils.saveAsCSV(result)
+    }
+
+    fun test(text: String): Double {
+        val deAssembledWords = MeCabManager.textToWords(text)
+        var tweetEvaluation = 0.0
+        var analyzedCount = 0
+
+        deAssembledWords.forEach { word ->
+            val tempWord: Word? = Dictionary.getWord(word.endForm)
+            if (tempWord != null) {
+                tweetEvaluation += tempWord.evaluation
+                analyzedCount++
+            }
+        }
+
+        if (analyzedCount != 0) {
+            return tweetEvaluation / analyzedCount
+        }
+
+        return 0.0
     }
 }
