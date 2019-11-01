@@ -6,6 +6,7 @@
 <img src="https://raw.githubusercontent.com/NomakiItsuru/TrendAnalyzer/master/flow_chart.png" />
   
 # Create Debug Environment
+0. JDK8をインストールする。
 1. 論文注釈[[10]](https://drive.google.com/drive/folders/0B4y35FiV1wh7fjQ5SkJETEJEYzlqcUY4WUlpZmR4dDlJMWI5ZUlXN2xZN2s2b0pqT3hMbTQ)からMeCab（mecab-0.996.exe）をUTF-8でインストールする。  
 2. 論文注釈[[5]](https://mana.bi/wiki.cgi?page=%B7%C1%C2%D6%C1%C7%B2%F2%C0%CF%B4%EFMeCab%23p7)で頒布されているNEologd辞書（2019/8/31版）をダウンロードし、MeCabに適用する。  
 3. このリポジトリをgit cloneでクローンし、Mavenでpackageビルドする。（メインクラスはdev/itsu/trendanalyzer/TrendAnalyzer.kt）  
