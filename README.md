@@ -6,8 +6,8 @@
 <img src="https://raw.githubusercontent.com/NomakiItsuru/TrendAnalyzer/master/flow_chart.png" />
   
 # Create Debug Environment
-1. 論文注釈[10]からMeCab（mecab-0.996.exe）をUTF-8でインストールする。  
-2. 論文注釈[5]で頒布されているNEologd辞書（2019/8/31版）をダウンロードし、MeCabに適用する。  
+1. 論文注釈[[10]](https://drive.google.com/drive/folders/0B4y35FiV1wh7fjQ5SkJETEJEYzlqcUY4WUlpZmR4dDlJMWI5ZUlXN2xZN2s2b0pqT3hMbTQ)からMeCab（mecab-0.996.exe）をUTF-8でインストールする。  
+2. 論文注釈[[5]](https://mana.bi/wiki.cgi?page=%B7%C1%C2%D6%C1%C7%B2%F2%C0%CF%B4%EFMeCab%23p7)で頒布されているNEologd辞書（2019/8/31版）をダウンロードし、MeCabに適用する。  
 3. このリポジトリをgit cloneでクローンし、Mavenでpackageビルドする。（メインクラスはdev/itsu/trendanalyzer/TrendAnalyzer.kt）  
 4. jarと同じディレクトリにsettings.propertiesを作り、以下の記述をする。ただしトークン類は用意していただく必要がある。  
 ```settings.properties
@@ -16,7 +16,7 @@ OAuthConsumerSecret=[OAUTH_CONSUMER_SECRET]
 OAuthAccessToken=[OAUTH_ACCESS_TOKEN]
 OAuthAccessSecret=[OAUTH_ACCESS_SECRET]
 ```  
-5. 論文注釈[2]から単語感情極性対応表（日本語）をダウンロードし、jarと同じディレクトリに配置する。
+5. 論文注釈[[2]](http://www.lr.pi.titech.ac.jp/~takamura/pndic_ja.html)から単語感情極性対応表（日本語）をダウンロードし、jarと同じディレクトリに配置する。
 6. java -jar [jar名] -create-dictionary:[語感情極性対応表（日本語）のパス]を実行。
 
 # Program Arguments
