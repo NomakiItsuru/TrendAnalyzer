@@ -5,7 +5,7 @@
   
 <img src="https://raw.githubusercontent.com/NomakiItsuru/TrendAnalyzer/master/flow_chart.png" />
   
-# Create Debug Environment
+# Creating Debug Environment
 0. JDK8をインストールする。
 1. 論文注釈[[10]](https://drive.google.com/drive/folders/0B4y35FiV1wh7fjQ5SkJETEJEYzlqcUY4WUlpZmR4dDlJMWI5ZUlXN2xZN2s2b0pqT3hMbTQ)からMeCab（mecab-0.996.exe）をUTF-8でインストールする。  
 2. 論文注釈[[5]](https://mana.bi/wiki.cgi?page=%B7%C1%C2%D6%C1%C7%B2%F2%C0%CF%B4%EFMeCab%23p7)で頒布されているNEologd辞書（2019/8/31版）をダウンロードし、MeCabに適用する。  
@@ -42,13 +42,13 @@ textで指定した文章の感情極性値評価を行い、その結果を出�
 -start_analyzeの実行結果であるcsvファイルの保存先を指定します。  
 ファイル名に```_###_```を使用することでこの部分に日時が入ります。（デフォルト：```output__###_.csv```）  
   
-# Output File Format
+# Output File Formats
 UTF-8のcsv形式で出力されます。  
 - Index トレンド番号  
 - Name トレンド名  
 - Evaluation 感情評価値  
 - Time 解析日時
-## 出力例
+## Example of output file
 output_201910300926.csv
 ```output_201910300926.csv
 Index,Name,Evaluation,TweetCount,Time
